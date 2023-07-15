@@ -28,6 +28,8 @@ class Paginator{
 	}
 	function paginate()
 	{
+		if(!isset($_GET['ipp'])) $_GET['ipp'] = $this->default_ipp;
+		if(!isset($_GET['page']))$_GET['page'] = $this->num_pages;
 		if(!isset($this->default_ipp)) $this->default_ipp=10;
         
 		if(isset($_GET['ipp'])){
@@ -42,19 +44,20 @@ class Paginator{
 		}
         }
 		
-
 		$this->current_page = (isset($_GET['page'])) ? (int) $_GET['page'] : 1 ; // must be numeric > 0
 		$prev_page = $this->current_page-1;
 		$next_page = $this->current_page+1;
 		
-		if($_GET)
-		{
-			$args = explode("&",$_SERVER['QUERY_STRING']);
-			foreach($args as $arg)
-			{
-				$keyval = explode("=",$arg);
-				if($keyval[0] != "page" And $keyval[0] != "ipp") $this->querystring .= "&" . $arg;
-			}
+		if(!isset($_GET)){
+			if($_GET)
+				{
+					$args = explode("&",$_SERVER['QUERY_STRING']);
+					foreach($args as $arg)
+					{
+						$keyval = explode("=",$arg);
+						if($keyval[0] != "page" And $keyval[0] != "ipp") $this->querystring .= "&" . $arg;
+					}
+				}
 		}
 
 		if($_POST)

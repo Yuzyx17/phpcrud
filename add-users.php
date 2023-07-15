@@ -44,13 +44,13 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 
 			if($insert){
 
-				header('location:browse-users.php?msg=ras&page=1&ipp=10');
+				header('location:index.php?msg=ras&page=1&ipp=10');
 
 				exit;
 
 			}else{
 
-				header('location:browse-users.php?msg=rna&page=1&ipp=10');
+				header('location:index.php?msg=rna&page=1&ipp=10');
 
 				exit;
 
@@ -111,7 +111,7 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 
    	<div class="container">
 
-		<h1><a href="https://learncodeweb.com/php/php-crud-in-bootstrap-4-with-search-functionality/">PHP CRUD in Bootstrap 4 with search functionality</a></h1>
+		<h1><a href="https://learncodeweb.com/php/php-crud-in-bootstrap-4-with-search-functionality/"></a></h1>
 
 		<?php
 
@@ -145,7 +145,7 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 
 		<div class="card">
 
-			<div class="card-header"><i class="fa fa-fw fa-plus-circle"></i> <strong>Add User</strong> <a href="browse-users.php?page=1&ipp=10" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-globe"></i> Browse Users</a></div>
+			<div class="card-header"><i class="fa fa-fw fa-plus-circle"></i> <strong>Add User</strong> <a href="index.php?page=1&ipp=10" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-globe"></i> Browse Users</a></div>
 
 			<div class="card-body">
 

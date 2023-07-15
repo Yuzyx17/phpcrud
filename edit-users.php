@@ -46,13 +46,13 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 
 	if($update){
 
-		header('location: browse-users.php?msg=rus&page=1&ipp=10');
+		header('location: index.php?msg=rus&page=1&ipp=10');
 
 		exit;
 
 	}else{
 
-		header('location: browse-users.php?msg=rnu&page=1&ipp=10');
+		header('location: index.php?msg=rnu&page=1&ipp=10');
 
 		exit;
 
@@ -131,93 +131,8 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 
 <body>
 
-	
-
-	<div class="bg-light border-bottom shadow-sm sticky-top">
-
-		<div class="container">
-
-			<header class="blog-header py-1">
-
-				<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand text-muted p-0 m-0" href="https://learncodeweb.com"><img src='https://learncodeweb.com/wp-content/uploads/2019/01/logo.png' alt='LearnCodeWeb'></a>
-
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-						<ul class="navbar-nav mr-auto">
-
-							<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-17" class="active nav-item"><a title="Home" href="https://learncodeweb.com/" class="nav-link">Home</a></li>
-
-							<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-16" class="nav-item"><a title="Web Development" href="https://learncodeweb.com/learn/web-development/" class="nav-link">Web Development</a></li>
-
-							<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-558" class="nav-item"><a title="PHP" href="https://learncodeweb.com/learn/php/" class="nav-link">PHP</a></li>
-
-							<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-14" class="nav-item"><a title="Bootstrap" href="https://learncodeweb.com/learn/bootstrap-framework/" class="nav-link">Bootstrap</a></li>
-
-							<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-559" class="nav-item"><a title="WordPress" href="https://learncodeweb.com/learn/wordpress/" class="nav-link">WordPress</a></li>
-
-							<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-15" class="nav-item"><a title="Snippets" href="https://learncodeweb.com/learn/snippets/" class="nav-link">Snippets</a></li>
-
-						</ul>
-
-						<form method="get" action="https://learncodeweb.com" class="form-inline my-2 my-lg-0">
-
-							<div class="input-group input-group-md">
-
-								<input type="text" class="form-control search-width" name="s" id="search" value="" placeholder="Search..." aria-label="Search">
-
-								<div class="input-group-append">
-
-									<button type="submit" class="btn btn-primary" id="searchBtn"><i class="fa fa-search"></i></button>
-
-								</div>
-
-							</div>
-
-						</form>
-
-					</div>
-
-				</nav>
-
-			</header>
-
-		</div> <!--/.container-->
-
-	</div>
-
-	<div class="container my-4">
-
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-		<!-- demo top banner -->
-
-		<ins class="adsbygoogle"
-
-			 style="display:block"
-
-			 data-ad-client="ca-pub-6724419004010752"
-
-			 data-ad-slot="6737619771"
-
-			 data-ad-format="auto"
-
-			 data-full-width-responsive="true"></ins>
-
-		<script>
-
-		(adsbygoogle = window.adsbygoogle || []).push({});
-
-		</script>
-
-	</div>
-
-	
 
 	<div class="container">
-
-		<h1><a href="https://learncodeweb.com/php/php-crud-in-bootstrap-4-with-search-functionality/">PHP CRUD in Bootstrap 4 with search functionality</a></h1>
 
 		<?php
 
@@ -247,7 +162,7 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 
 		<div class="card">
 
-			<div class="card-header"><i class="fa fa-fw fa-edit"></i> <strong>Edit User</strong> <a href="browse-users.php?page=1&ipp=10" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-globe"></i> Browse Users</a></div>
+			<div class="card-header"><i class="fa fa-fw fa-edit"></i> <strong>Edit User</strong> <a href="index.php?page=1&ipp=10" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-globe"></i> Browse Users</a></div>
 
 			<div class="card-body">
 
@@ -297,34 +212,6 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 			</div>
 
 		</div>
-
-	</div>
-
-    
-
-	<div class="container my-4">
-
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-		<!-- demo left sidebar -->
-
-		<ins class="adsbygoogle"
-
-			 style="display:block"
-
-			 data-ad-client="ca-pub-6724419004010752"
-
-			 data-ad-slot="7706376079"
-
-			 data-ad-format="auto"
-
-			 data-full-width-responsive="true"></ins>
-
-		<script>
-
-		(adsbygoogle = window.adsbygoogle || []).push({});
-
-		</script>
 
 	</div>
 

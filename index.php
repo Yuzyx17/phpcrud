@@ -26,33 +26,6 @@
 
 <body>
 
-	<div class="container my-4">
-
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-		<!-- demo top banner -->
-
-		<ins class="adsbygoogle"
-
-			 style="display:block"
-
-			 data-ad-client="ca-pub-6724419004010752"
-
-			 data-ad-slot="6737619771"
-
-			 data-ad-format="auto"
-
-			 data-full-width-responsive="true"></ins>
-
-		<script>
-
-		(adsbygoogle = window.adsbygoogle || []).push({});
-
-		</script>
-
-	</div>
-
-	
 
 	<?php
 		$condition	=	'';
@@ -67,10 +40,10 @@
 		}
 		
 		//Main queries
-		$pages->default_ipp	=	15;
+		$pages->default_ipp	=	10;
 		$sql 	= $db->getRecFrmQry("SELECT * FROM users WHERE 1 ".$condition."");
 		$pages->items_total	=	count($sql);
-		$pages->mid_range	=	9;
+		$pages->mid_range	=	7;
 		$pages->paginate(); 
 
 		$userData	=   $db->getRecFrmQry("SELECT * FROM users WHERE 1 ".$condition." ORDER BY id DESC ".$pages->limit."");
@@ -79,7 +52,7 @@
 
    	<div class="container">
 
-		<h1><a href="https://learncodeweb.com/php/php-crud-in-bootstrap-4-with-search-functionality/">PHP CRUD in Bootstrap 4 with search functionality</a></h1>
+		<h1><a href="https://learncodeweb.com/php/php-crud-in-bootstrap-4-with-search-functionality/"></a></h1>
 
 		<div class="card">
 
@@ -175,7 +148,7 @@
 
 										<button type="submit" name="submit" value="search" id="submit" class="btn btn-primary"><i class="fa fa-fw fa-search"></i> Search</button>
 
-										<a href="browse-users.php?<?php 
+										<a href="index.php?<?php 
 										if(isset($_GET['ipp'])) echo "ipp=".$_GET['ipp']."&";
 										else echo "ipp=10&";
 										if(isset($_GET['page'])) echo "page=".$_GET['page'];
