@@ -44,13 +44,13 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 
 			if($insert){
 
-				header('location:browse-users.php?msg=ras');
+				header('location:browse-users.php?msg=ras&page=1&ipp=10');
 
 				exit;
 
 			}else{
 
-				header('location:browse-users.php?msg=rna');
+				header('location:browse-users.php?msg=rna&page=1&ipp=10');
 
 				exit;
 
@@ -102,70 +102,12 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 
 	<![endif]-->
 
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-	<script>
-
-	  (adsbygoogle = window.adsbygoogle || []).push({
-
-		google_ad_client: "ca-pub-6724419004010752",
-
-		enable_page_level_ads: true
-
-	  });
-
-	</script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131906273-1"></script>
-
-	<script>
-
-	  window.dataLayer = window.dataLayer || [];
-
-	  function gtag(){dataLayer.push(arguments);}
-
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-131906273-1');
-
-	</script>
 
 </head>
 
 
 
 <body>
-
-	
-	<div class="container my-4">
-
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-		<!-- demo top banner -->
-
-		<ins class="adsbygoogle"
-
-			 style="display:block"
-
-			 data-ad-client="ca-pub-6724419004010752"
-
-			 data-ad-slot="6737619771"
-
-			 data-ad-format="auto"
-
-			 data-full-width-responsive="true"></ins>
-
-		<script>
-
-		(adsbygoogle = window.adsbygoogle || []).push({});
-
-		</script>
-
-	</div>
-
-	
 
    	<div class="container">
 
@@ -203,7 +145,7 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 
 		<div class="card">
 
-			<div class="card-header"><i class="fa fa-fw fa-plus-circle"></i> <strong>Add User</strong> <a href="browse-users.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-globe"></i> Browse Users</a></div>
+			<div class="card-header"><i class="fa fa-fw fa-plus-circle"></i> <strong>Add User</strong> <a href="browse-users.php?page=1&ipp=10" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-globe"></i> Browse Users</a></div>
 
 			<div class="card-body">
 
@@ -254,36 +196,6 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 		</div>
 
 	</div>
-
-    
-
-	<div class="container my-4">
-
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-		<!-- demo left sidebar -->
-
-		<ins class="adsbygoogle"
-
-			 style="display:block"
-
-			 data-ad-client="ca-pub-6724419004010752"
-
-			 data-ad-slot="7706376079"
-
-			 data-ad-format="auto"
-
-			 data-full-width-responsive="true"></ins>
-
-		<script>
-
-		(adsbygoogle = window.adsbygoogle || []).push({});
-
-		</script>
-
-	</div>
-
-	
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 

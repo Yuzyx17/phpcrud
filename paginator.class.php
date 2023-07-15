@@ -28,7 +28,6 @@ class Paginator{
 	}
 	function paginate()
 	{
-
 		if(!isset($this->default_ipp)) $this->default_ipp=10;
         
 		if(isset($_GET['ipp'])){
@@ -36,12 +35,13 @@ class Paginator{
             {
                 $this->num_pages = 1;
             }
-        }
-		else
+			else
 		{
 			if(!is_numeric($this->items_per_page) OR $this->items_per_page <= 0) $this->items_per_page = $this->default_ipp;
 			$this->num_pages = ceil($this->items_total/$this->items_per_page);
 		}
+        }
+		
 
 		$this->current_page = (isset($_GET['page'])) ? (int) $_GET['page'] : 1 ; // must be numeric > 0
 		$prev_page = $this->current_page-1;
@@ -64,7 +64,7 @@ class Paginator{
 				if($key != "page" And $key != "ipp") $this->querystring .= "&$key=$val";
 			}
 		}
-		
+
 		if($this->num_pages > 1)
 		{
 			$this->return = ($this->current_page > 1 And $this->items_total >= 10) ? "<div class='row'><div class='col-sm-7'><ul class='pagination'><li class='page-item'><a class=\"page-link\" href=\"$_SERVER[PHP_SELF]?page=$prev_page&ipp=$this->items_per_page$this->querystring\">Previous</a></li> ":"<div class='row'><div class='col-sm-7'><ul class='pagination'><li class='page-item'><a href=\"javascript:;\" class=\"page-link disabled\" tabindex=\"-1\">Previous</a></li> ";
@@ -85,9 +85,7 @@ class Paginator{
 			}
 		
 			$this->range = range($this->start_range,$this->end_range);
-            if(!isset($_GET['page'])){
-                $_GET['page'] = $this->num_pages;
-            }
+
 			for($i=1;$i<=$this->num_pages;$i++)
 			{
 				//if($this->range[0] > 2 And $i == $this->range[0]) $this->return .= " ... ";
@@ -100,7 +98,7 @@ class Paginator{
 				//if($this->range[$this->mid_range-1] < $this->num_pages-1 And $i == $this->range[$this->mid_range-1]) $this->return .= " ... ";
 				if($this->range[$this->mid_range-1] < $this->num_pages-1 And $i == $this->range[$this->mid_range-1]) $this->return .= "";
 			}
-            
+
 			$this->return .= (($this->current_page < $this->num_pages And $this->items_total >= 10) And ($_GET['page'] != 'All') And $this->current_page > 0) ? "<li class='page-item'><a class=\"page-link\" href=\"$_SERVER[PHP_SELF]?page=$next_page&ipp=$this->items_per_page$this->querystring\">Next</a></li>\n":"<li class='page-item'><a href=\"javascript:;\" class=\"page-link disabled\" href=\"javascript:;\" tabindex=\"-1\">Next</a></li>\n";
 			$this->return .= ($_GET['page'] == 'All') ? "<li class='page-item active'><a class=\"page-link\" hidden href=\"javascript:;\">All</a></li> \n":"<li class='page-item'><a class=\"page-link\" hidden href=\"$_SERVER[PHP_SELF]?page=1&ipp=All$this->querystring\">All</a></li></ul></div> \n";
 		}

@@ -115,7 +115,7 @@
 		$pages->items_total	=	count($sql);
 		$pages->mid_range	=	9;
 		$pages->paginate(); 
-		 
+
 		$userData	=   $db->getRecFrmQry("SELECT * FROM users WHERE 1 ".$condition." ORDER BY id DESC ".$pages->limit."");
 	
 	?>
