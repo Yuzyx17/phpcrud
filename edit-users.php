@@ -46,13 +46,13 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 
 	if($update){
 
-		header('location: browse-users.php?msg=rus');
+		header('location: browse-users.php?msg=rus&page=1&ipp=10');
 
 		exit;
 
 	}else{
 
-		header('location: browse-users.php?msg=rnu');
+		header('location: browse-users.php?msg=rnu&page=1&ipp=10');
 
 		exit;
 
@@ -247,7 +247,7 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 
 		<div class="card">
 
-			<div class="card-header"><i class="fa fa-fw fa-edit"></i> <strong>Edit User</strong> <a href="browse-users.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-globe"></i> Browse Users</a></div>
+			<div class="card-header"><i class="fa fa-fw fa-edit"></i> <strong>Edit User</strong> <a href="browse-users.php?page=1&ipp=10" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-globe"></i> Browse Users</a></div>
 
 			<div class="card-body">
 
