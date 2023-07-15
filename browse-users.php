@@ -10,10 +10,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
-	<meta name="description" content="PHP CRUD with search and pagination in bootstrap 4">
-	<meta name="keywords" content="PHP CRUD, CRUD with search and pagination, bootstrap 4, PHP">
-	<meta name="robots" content="index,follow">
-	<title>PHP CRUD with search and pagination in bootstrap 4</title>
+	<title>PHP CRUD</title>
 
 	
 
@@ -22,46 +19,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-
-	<!--[if lt IE 9]>
-
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
-	<![endif]-->
-
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-	<script>
-
-	  (adsbygoogle = window.adsbygoogle || []).push({
-
-		google_ad_client: "ca-pub-6724419004010752",
-
-		enable_page_level_ads: true
-
-	  });
-
-	</script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131906273-1"></script>
-
-	<script>
-
-	  window.dataLayer = window.dataLayer || [];
-
-	  function gtag(){dataLayer.push(arguments);}
-
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-131906273-1');
-
-	</script>
 
 </head>
 
@@ -197,6 +154,14 @@
 									<input type="tel" class="tel form-control" pattern=".{14,14}" name="userphone" id="userphone" x-autocompletetype="tel" value="<?php echo isset($_REQUEST['userphone'])?$_REQUEST['userphone']:''?>" placeholder="Enter user phone">
 
 								</div>
+									<input type="hidden" name="ipp" value=<?php 
+										if(isset($_GET['ipp'])) echo $_GET['ipp'];
+										else echo 10;
+										?>>
+									<input type="hidden" name="page" value=<?php 
+										if(isset($_GET['page'])) echo $_GET['page'];
+										else echo 1;
+										?>>
 
 							</div>
 
@@ -210,7 +175,12 @@
 
 										<button type="submit" name="submit" value="search" id="submit" class="btn btn-primary"><i class="fa fa-fw fa-search"></i> Search</button>
 
-										<a href="<?php echo $_SERVER['PHP_SELF'];?>" class="btn btn-danger"><i class="fa fa-fw fa-sync"></i> Clear</a>
+										<a href="browse-users.php?<?php 
+										if(isset($_GET['ipp'])) echo "ipp=".$_GET['ipp']."&";
+										else echo "ipp=10&";
+										if(isset($_GET['page'])) echo "page=".$_GET['page'];
+										else echo "page=1";
+										?>" class="btn btn-danger"><i class="fa fa-fw fa-sync"></i> Clear</a>
 
 									</div>
 
