@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h2>Laravel 9 CRUD (Create, Read, Update and Delete)</h2>
+                        <h2>User Info Directory</h2>
                     </div>
                     <div class="card-body">
                         <a href="{{ url('/users/create') }}" class="btn btn-success btn-sm" title="Add New User">
@@ -47,9 +47,11 @@
                                 </tbody>
                             </table>
                         </div>
-  
                     </div>
                 </div>
+            <div class="d-flex justify-content-center my-5">
+                {{ $users->onEachSide(1)->links() }}
+            </div>
             </div>
         </div>
     </div>
